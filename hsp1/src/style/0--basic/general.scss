@@ -1,0 +1,24 @@
+
+main {
+margin: 1rem 0;
+}
+
+mark{
+color: var(--c-base-1);
+background-color: transparent;
+}
+
+section {
+--max-width: 70ch;//readability
+padding: 1rem max(1rem, calc((100% - var(--max-width)) / 2));
+
+color: var(--c-fg-1);
+font-size: 1.5rem;
+line-height: 1.25;
+}
+
+
+
+
+
+
