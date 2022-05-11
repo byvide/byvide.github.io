@@ -1,0 +1,71 @@
+
+//--------------------------DESCRIPTION---------------------------
+/*
+
+https://www.formdev.com/flatlaf/
+
+*/
+//---------------------------CONSTANTS----------------------------
+
+//the base values to construct the theme
+$hue: 295;
+
+//----------------------CONTROL VARIABLES-------------------------
+//assigned to the body so values cascade to all elements
+//to adjust the ...
+body{  
+--contrast: 0;
+  //FROM 0 = normal TO 1 = high
+  //1. difference of lightness between foreground and background color-group
+  //2. difference of lightness within a color-group
+--tone: -1;
+  //FROM -1 = dark mode TO 1 = light mode
+  //1. target amount of lightness of foreground and background color-group
+  //2. saturation for a color-group (0 = all gray >> for future animation?)
+}
+//----------------------------------------------------------------
+//
+//they expressed in formual to be generic
+//
+* {
+transition: all 250ms ease;
+
+
+
+@for $i from 0 through 4 {
+
+  --c-base-#{$i}: hsl(
+    calc(#{$hue} - 90 * var(--tone)), 
+100%, 
+calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * #{$i - 2})
+);
+
+--foreground-#{$i}: hsl(
+  #{$hue + 0},
+  5%,
+  calc(
+    (60% + 20% * var(--tone) * var(--contrast))
+    *
+    (
+      (1 + var(--tone) * 0.05) 
+      +
+      (var(--tone) * #{.25 * $i})
+    )
+  )
+);
+--background-#{$i}: hsl(
+  #{$hue + 0},
+  5%,
+  calc(
+    (40% + -20% * var(--tone) * var(--contrast))
+    *
+    (
+      (1 + var(--tone) * -0.05) 
+      +
+      (var(--tone) * -#{.25 * $i})
+    )
+  )
+);
+}
+}
+//----------------------------------------------------------------
