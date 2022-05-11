@@ -1,0 +1,212 @@
+body {
+  --t-contrast: 0;
+  --t-light: -1;
+}
+
+* {
+  transition: all 250ms ease;
+  --c-base-0: hsl(
+      calc(295 - 90 * var(--t-light)),
+  100%,
+  calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * -2)
+  );
+  --c-fg-0: hsl(
+    295,
+    5%,
+    calc(
+      (60% + 20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * 0.05)
+        +
+        (var(--t-light) * 0)
+      )
+    )
+  );
+  --c-bg-0: hsl(
+    295,
+    5%,
+    calc(
+      (40% + -20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * -0.05)
+        +
+        (var(--t-light) * -0)
+      )
+    )
+  );
+  --c-base-1: hsl(
+      calc(295 - 90 * var(--t-light)),
+  100%,
+  calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * -1)
+  );
+  --c-fg-1: hsl(
+    295,
+    5%,
+    calc(
+      (60% + 20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * 0.05)
+        +
+        (var(--t-light) * 0.25)
+      )
+    )
+  );
+  --c-bg-1: hsl(
+    295,
+    5%,
+    calc(
+      (40% + -20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * -0.05)
+        +
+        (var(--t-light) * -0.25)
+      )
+    )
+  );
+  --c-base-2: hsl(
+      calc(295 - 90 * var(--t-light)),
+  100%,
+  calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * 0)
+  );
+  --c-fg-2: hsl(
+    295,
+    5%,
+    calc(
+      (60% + 20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * 0.05)
+        +
+        (var(--t-light) * 0.5)
+      )
+    )
+  );
+  --c-bg-2: hsl(
+    295,
+    5%,
+    calc(
+      (40% + -20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * -0.05)
+        +
+        (var(--t-light) * -0.5)
+      )
+    )
+  );
+  --c-base-3: hsl(
+      calc(295 - 90 * var(--t-light)),
+  100%,
+  calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * 1)
+  );
+  --c-fg-3: hsl(
+    295,
+    5%,
+    calc(
+      (60% + 20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * 0.05)
+        +
+        (var(--t-light) * 0.75)
+      )
+    )
+  );
+  --c-bg-3: hsl(
+    295,
+    5%,
+    calc(
+      (40% + -20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * -0.05)
+        +
+        (var(--t-light) * -0.75)
+      )
+    )
+  );
+  --c-base-4: hsl(
+      calc(295 - 90 * var(--t-light)),
+  100%,
+  calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * 2)
+  );
+  --c-fg-4: hsl(
+    295,
+    5%,
+    calc(
+      (60% + 20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * 0.05)
+        +
+        (var(--t-light) * 1)
+      )
+    )
+  );
+  --c-bg-4: hsl(
+    295,
+    5%,
+    calc(
+      (40% + -20% * var(--t-light) * var(--t-contrast))
+      *
+      (
+        (1 + var(--t-light) * -0.05)
+        +
+        (var(--t-light) * -1)
+      )
+    )
+  );
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*::-moz-selection {
+  color: var(--c-base-4);
+  background-color: var(--c-base-0);
+}
+
+*::selection {
+  color: var(--c-base-4);
+  background-color: var(--c-base-0);
+}
+
+html {
+  font-family: "Rubik";
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  --max-width: 900px;
+  padding: 0 max(1rem, calc((100vw - var(--max-width)) / 2));
+  overflow-x: hidden;
+  background-color: var(--c-bg-1);
+  background-image: radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px), radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px);
+  background-size: calc(20 * 1.5px) calc(20 * 1.5px);
+  background-position: 0 0, calc(10 * 1.5px) calc(10 * 1.5px);
+}
+
+main {
+  margin: 1rem 0;
+}
+
+mark {
+  color: var(--c-base-1);
+  background-color: transparent;
+}
+
+section {
+  --max-width: 70ch;
+  padding: 1rem max(1rem, calc((100% - var(--max-width)) / 2));
+  color: var(--c-fg-1);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,56 @@
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+*::selection {
+color: var(--c-base-4);
+background-color: var(--c-base-0);
+}
+
+html{
+font-family: "Rubik";
+font-size: 16px;//set rem;
+}
+
+body {
+margin: 0;
+--max-width: 900px;//mega screens vs raster images
+padding: 0 max(1rem, calc((100vw - var(--max-width)) / 2));
+
+overflow-x: hidden;//disable horizontal scrolling
+
+//BACKGROUND PATTERN https://bansal.io/pattern-css
+background-color: var(--c-bg-1);
+background-image: 
+  radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px),
+  radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px);
+background-size: calc(20 * 1.5px) calc(20 * 1.5px);
+background-position: 0 0, calc(10 * 1.5px) calc(10 * 1.5px);
+}
+
+main {
+margin: 1rem 0;
+}
+
+mark{
+color: var(--c-base-1);
+background-color: transparent;
+}
+
+section {
+--max-width: 70ch;//readability
+padding: 1rem max(1rem, calc((100% - var(--max-width)) / 2));
+
+color: var(--c-fg-1);
+font-size: 1.5rem;
+line-height: 1.25;
+}
+
+
+
+
+
+

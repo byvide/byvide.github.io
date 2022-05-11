@@ -1,0 +1,61 @@
+
+//----------------------------------------------------------------
+//PARAMETER
+//
+//the base values to construct the theme
+$theme-hue: 295;
+
+//----------------------------------------------------------------
+//CONTROL VARIABLES assigned to the body 
+//so values cascade to all elements
+//to adjust the ...
+body{  
+--t-contrast: 0;
+--t-light: -1;
+}
+//----------------------------------------------------------------
+//
+//they expressed in formual to be generic
+//
+* {
+transition: all 250ms ease;
+
+
+
+@for $i from 0 through 4 {
+
+  --c-base-#{$i}: hsl(
+    calc(#{$theme-hue} - 90 * var(--t-light)), 
+100%, 
+calc((50% + 5% * var(--t-light)) - (7.5% + 2.5% * var(--t-contrast)) * #{$i - 2})
+);
+
+--c-fg-#{$i}: hsl(
+  #{$theme-hue + 0},
+  5%,
+  calc(
+    (60% + 20% * var(--t-light) * var(--t-contrast))
+    *
+    (
+      (1 + var(--t-light) * 0.05) 
+      +
+      (var(--t-light) * #{.25 * $i})
+    )
+  )
+);
+--c-bg-#{$i}: hsl(
+  #{$theme-hue + 0},
+  5%,
+  calc(
+    (40% + -20% * var(--t-light) * var(--t-contrast))
+    *
+    (
+      (1 + var(--t-light) * -0.05) 
+      +
+      (var(--t-light) * -#{.25 * $i})
+    )
+  )
+);
+}
+}
+//----------------------------------------------------------------
