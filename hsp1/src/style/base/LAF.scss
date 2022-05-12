@@ -7,29 +7,36 @@ https://www.formdev.com/flatlaf/
 */
 //---------------------------CONSTANTS----------------------------
 
-//the base values to construct the theme
-$hue: 295;
+$hue: 25;
 
-$bg-shift: 20%;
-$bg-gap: 5%;
+$fgbg-SAT: 5%;
+
+$fg-LIG-shift: -5%;//asymmetric (compiled       beforehand)
+$fg-LIG-gap: 10%;
+
+$bg-LIG-shift: 30%;//symmetric (follo        ws tone change)
+$bg-LIG-gap: 5%;
+
 
 //----------------------CONTROL VARIABLES-------------------------
 //assigned to the body so values cascade to all elements
 //to adjust the ...
 body{  
 --contrast: 0;
-  //FROM 0 = normal TO 1 = high
-  //1. difference of lightness between foreground and background color-group
-  //2. difference of lightness within a color-group
+//FROM 0 = normal TO 1 = high
+//1. difference of lightness between foreground and background color-group
+//2. difference of lightness within a color-group
 --tone: -1;
-  //FROM -1 = dark mode TO 1 = light mode
-  //1. target amount of lightness of foreground and background color-group
-  //2. saturation for a color-group (0 = all gray >> for future animation?)
+//FROM -1 = dark mode TO 1 = light mode
+//1. target amount of lightness of foreground and background color-group
+//2. saturation for a color-group (0 = all gray >> for future animation?)
 }
 //----------------------------------------------------------------
 //
 //they expressed in formual to be generic
 //
+
+//NOTE: the [VAR*VAR] used as a replacement for abs()*/
 *,
 *::before,
 *::after {
@@ -39,35 +46,22 @@ transition: all 250ms ease;
 
 @for $i from 0 through 4 {
 
-  --c-base-#{$i}: hsl(
-    calc(#{$hue} - 90 * var(--tone)), 
-100%, 
+--ink-#{$i}: hsl(
+#{$hue}, 
+calc(100% * var(--tone) * var(--tone)),
 calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * #{$i - 2})
 );
-
 --foreground-#{$i}: hsl(
-  #{$hue + 0},
-  5%,
-  calc(
-    (60% + 20% * var(--tone) * var(--contrast))
-    *
-    (
-      (1 + var(--tone) * 0.05) 
-      +
-      (var(--tone) * #{.25 * $i})
-    )
-  )
+#{$hue},
+calc(#{$fgbg-SAT} * var(--tone) * var(--tone)),
+calc(50% - #{$fg-LIG-shift + $fg-LIG-gap * $i} * var(--t-light))
 );
 --background-#{$i}: hsl(
-  #{$hue + 0},
-  5%,
-  calc(50% + (20% + #{5% * ($i - 2)} * var(--tone)) * var(--tone))
+#{$hue + 180},
+calc(#{$fgbg-SAT} * var(--tone) * var(--tone)),
+calc(50% + (#{$bg-LIG-shift} + #{$bg-LIG-gap * ($i - 2)} * var(--tone)) * var(--tone))
 );
-  /*
-  BACKGROUND LIGHTNESS FORMULA
-    BASE + (SHIFT + GAP * T) * T
-      the inner [ * T] become [T^2] as an alternative for abs()
-  */
+
 }
 }
 //----------------------------------------------------------------

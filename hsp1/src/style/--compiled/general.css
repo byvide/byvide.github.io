@@ -5,13 +5,13 @@
 }
 
 *::-moz-selection {
-  color: var(--c-base-4);
-  background-color: var(--c-base-0);
+  color: var(--ink-4);
+  background-color: var(--ink-0);
 }
 
 *::selection {
-  color: var(--c-base-4);
-  background-color: var(--c-base-0);
+  color: var(--ink-4);
+  background-color: var(--ink-0);
 }
 
 html {
@@ -24,8 +24,8 @@ body {
   --max-width: 900px;
   padding: 0 max(1rem, calc((100vw - var(--max-width)) / 2));
   overflow-x: hidden;
-  background-color: var(--c-bg-1);
-  background-image: radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px), radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px);
+  background-color: var(--background-2);
+  background-image: radial-gradient(var(--background-1) 1.5px, transparent 1.5px), radial-gradient(var(--background-1) 1.5px, transparent 1.5px);
   background-size: calc(20 * 1.5px) calc(20 * 1.5px);
   background-position: 0 0, calc(10 * 1.5px) calc(10 * 1.5px);
 }
@@ -35,14 +35,14 @@ main {
 }
 
 mark {
-  color: var(--c-base-1);
+  color: var(--ink-1);
   background-color: transparent;
 }
 
 section {
   --max-width: 70ch;
   padding: 1rem max(1rem, calc((100% - var(--max-width)) / 2));
-  color: var(--c-fg-1);
+  color: var(--foreground-1);
   font-size: 1.5rem;
   line-height: 1.25;
 }/*# sourceMappingURL=general.css.map */
