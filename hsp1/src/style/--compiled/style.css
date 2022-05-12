@@ -12,130 +12,80 @@ body {
 *::before,
 *::after {
   transition: all 250ms ease;
-  --c-base-0: hsl(
-      calc(295 - 90 * var(--tone)),
-  100%,
+  --ink-0: hsl(
+  25,
+  calc(100% * var(--tone) * var(--tone)),
   calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * -2)
   );
   --foreground-0: hsl(
-    295,
-    5%,
-    calc(
-      (60% + 20% * var(--tone) * var(--contrast))
-      *
-      (
-        (1 + var(--tone) * 0.05)
-        +
-        (var(--tone) * 0)
-      )
-    )
+  25,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% - -5% * var(--t-light))
   );
   --background-0: hsl(
-    295,
-    5%,
-    calc(50% + (20% + -10% * var(--tone)) * var(--tone))
-    /*BASE + (SHIFT + GAP * T) * T
-    the inner [ * T] become [T^2] as an alternative for abs()*/
+  205,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% + (30% + -10% * var(--tone)) * var(--tone))
   );
-  --c-base-1: hsl(
-      calc(295 - 90 * var(--tone)),
-  100%,
+  --ink-1: hsl(
+  25,
+  calc(100% * var(--tone) * var(--tone)),
   calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * -1)
   );
   --foreground-1: hsl(
-    295,
-    5%,
-    calc(
-      (60% + 20% * var(--tone) * var(--contrast))
-      *
-      (
-        (1 + var(--tone) * 0.05)
-        +
-        (var(--tone) * 0.25)
-      )
-    )
+  25,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% - 5% * var(--t-light))
   );
   --background-1: hsl(
-    295,
-    5%,
-    calc(50% + (20% + -5% * var(--tone)) * var(--tone))
-    /*BASE + (SHIFT + GAP * T) * T
-    the inner [ * T] become [T^2] as an alternative for abs()*/
+  205,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% + (30% + -5% * var(--tone)) * var(--tone))
   );
-  --c-base-2: hsl(
-      calc(295 - 90 * var(--tone)),
-  100%,
+  --ink-2: hsl(
+  25,
+  calc(100% * var(--tone) * var(--tone)),
   calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * 0)
   );
   --foreground-2: hsl(
-    295,
-    5%,
-    calc(
-      (60% + 20% * var(--tone) * var(--contrast))
-      *
-      (
-        (1 + var(--tone) * 0.05)
-        +
-        (var(--tone) * 0.5)
-      )
-    )
+  25,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% - 15% * var(--t-light))
   );
   --background-2: hsl(
-    295,
-    5%,
-    calc(50% + (20% + 0% * var(--tone)) * var(--tone))
-    /*BASE + (SHIFT + GAP * T) * T
-    the inner [ * T] become [T^2] as an alternative for abs()*/
+  205,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% + (30% + 0% * var(--tone)) * var(--tone))
   );
-  --c-base-3: hsl(
-      calc(295 - 90 * var(--tone)),
-  100%,
+  --ink-3: hsl(
+  25,
+  calc(100% * var(--tone) * var(--tone)),
   calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * 1)
   );
   --foreground-3: hsl(
-    295,
-    5%,
-    calc(
-      (60% + 20% * var(--tone) * var(--contrast))
-      *
-      (
-        (1 + var(--tone) * 0.05)
-        +
-        (var(--tone) * 0.75)
-      )
-    )
+  25,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% - 25% * var(--t-light))
   );
   --background-3: hsl(
-    295,
-    5%,
-    calc(50% + (20% + 5% * var(--tone)) * var(--tone))
-    /*BASE + (SHIFT + GAP * T) * T
-    the inner [ * T] become [T^2] as an alternative for abs()*/
+  205,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% + (30% + 5% * var(--tone)) * var(--tone))
   );
-  --c-base-4: hsl(
-      calc(295 - 90 * var(--tone)),
-  100%,
+  --ink-4: hsl(
+  25,
+  calc(100% * var(--tone) * var(--tone)),
   calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * 2)
   );
   --foreground-4: hsl(
-    295,
-    5%,
-    calc(
-      (60% + 20% * var(--tone) * var(--contrast))
-      *
-      (
-        (1 + var(--tone) * 0.05)
-        +
-        (var(--tone) * 1)
-      )
-    )
+  25,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% - 35% * var(--t-light))
   );
   --background-4: hsl(
-    295,
-    5%,
-    calc(50% + (20% + 10% * var(--tone)) * var(--tone))
-    /*BASE + (SHIFT + GAP * T) * T
-    the inner [ * T] become [T^2] as an alternative for abs()*/
+  205,
+  calc(5% * var(--tone) * var(--tone)),
+  calc(50% + (30% + 10% * var(--tone)) * var(--tone))
   );
 }
 
@@ -146,13 +96,13 @@ body {
 }
 
 *::-moz-selection {
-  color: var(--c-base-4);
-  background-color: var(--c-base-0);
+  color: var(--ink-4);
+  background-color: var(--ink-0);
 }
 
 *::selection {
-  color: var(--c-base-4);
-  background-color: var(--c-base-0);
+  color: var(--ink-4);
+  background-color: var(--ink-0);
 }
 
 html {
@@ -165,8 +115,8 @@ body {
   --max-width: 900px;
   padding: 0 max(1rem, calc((100vw - var(--max-width)) / 2));
   overflow-x: hidden;
-  background-color: var(--c-bg-1);
-  background-image: radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px), radial-gradient(var(--c-bg-2) 1.5px, transparent 1.5px);
+  background-color: var(--background-2);
+  background-image: radial-gradient(var(--background-1) 1.5px, transparent 1.5px), radial-gradient(var(--background-1) 1.5px, transparent 1.5px);
   background-size: calc(20 * 1.5px) calc(20 * 1.5px);
   background-position: 0 0, calc(10 * 1.5px) calc(10 * 1.5px);
 }
@@ -176,14 +126,14 @@ main {
 }
 
 mark {
-  color: var(--c-base-1);
+  color: var(--ink-1);
   background-color: transparent;
 }
 
 section {
   --max-width: 70ch;
   padding: 1rem max(1rem, calc((100% - var(--max-width)) / 2));
-  color: var(--c-fg-1);
+  color: var(--foreground-1);
   font-size: 1.5rem;
   line-height: 1.25;
 }/*# sourceMappingURL=style.css.map */
