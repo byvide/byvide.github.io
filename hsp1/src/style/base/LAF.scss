@@ -54,7 +54,7 @@ calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * #{$i - 2})
 --foreground-#{$i}: hsl(
 #{$hue},
 calc(#{$fgbg-SAT} * var(--tone) * var(--tone)),
-calc(50% - #{$fg-LIG-shift + $fg-LIG-gap * $i} * var(--t-light))
+calc(50% + #{$fg-LIG-shift + $fg-LIG-gap * $i} * var(--t-light))
 );
 --background-#{$i}: hsl(
 #{$hue + 180},
