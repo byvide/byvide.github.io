@@ -62,9 +62,12 @@ calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * #{$i - 2})
   #{$hue + 0},
   5%,
   calc(50% + (20% + #{5% * ($i - 2)} * var(--tone)) * var(--tone))
-  /*BASE + (SHIFT + GAP * T) * T
-  the inner [ * T] become [T^2] as an alternative for abs()*/
 );
+  /*
+  BACKGROUND LIGHTNESS FORMULA
+    BASE + (SHIFT + GAP * T) * T
+      the inner [ * T] become [T^2] as an alternative for abs()
+  */
 }
 }
 //----------------------------------------------------------------
