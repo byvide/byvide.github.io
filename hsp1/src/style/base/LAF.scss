@@ -10,6 +10,9 @@ https://www.formdev.com/flatlaf/
 //the base values to construct the theme
 $hue: 295;
 
+$bg-shift: 20%;
+$bg-gap: 5%;
+
 //----------------------CONTROL VARIABLES-------------------------
 //assigned to the body so values cascade to all elements
 //to adjust the ...
@@ -27,7 +30,9 @@ body{
 //
 //they expressed in formual to be generic
 //
-* {
+*,
+*::before,
+*::after {
 transition: all 250ms ease;
 
 
@@ -56,15 +61,9 @@ calc((50% + 5% * var(--tone)) - (7.5% + 2.5% * var(--contrast)) * #{$i - 2})
 --background-#{$i}: hsl(
   #{$hue + 0},
   5%,
-  calc(
-    (40% + -20% * var(--tone) * var(--contrast))
-    *
-    (
-      (1 + var(--tone) * -0.05) 
-      +
-      (var(--tone) * -#{.25 * $i})
-    )
-  )
+  calc(50% + (20% + #{5% * ($i - 2)} * var(--tone)) * var(--tone))
+  /*BASE + (SHIFT + GAP * T) * T
+  the inner [ * T] become [T^2] as an alternative for abs()*/
 );
 }
 }
