@@ -20,7 +20,7 @@ body {
   --foreground-0: hsl(
   25,
   calc(5% * var(--tone) * var(--tone)),
-  calc(50% + -5% * var(--t-light))
+  calc(50% + -5% * var(--tone))
   );
   --background-0: hsl(
   205,
@@ -35,7 +35,7 @@ body {
   --foreground-1: hsl(
   25,
   calc(5% * var(--tone) * var(--tone)),
-  calc(50% + 5% * var(--t-light))
+  calc(50% + 5% * var(--tone))
   );
   --background-1: hsl(
   205,
@@ -50,7 +50,7 @@ body {
   --foreground-2: hsl(
   25,
   calc(5% * var(--tone) * var(--tone)),
-  calc(50% + 15% * var(--t-light))
+  calc(50% + 15% * var(--tone))
   );
   --background-2: hsl(
   205,
@@ -65,7 +65,7 @@ body {
   --foreground-3: hsl(
   25,
   calc(5% * var(--tone) * var(--tone)),
-  calc(50% + 25% * var(--t-light))
+  calc(50% + 25% * var(--tone))
   );
   --background-3: hsl(
   205,
@@ -80,7 +80,7 @@ body {
   --foreground-4: hsl(
   25,
   calc(5% * var(--tone) * var(--tone)),
-  calc(50% + 35% * var(--t-light))
+  calc(50% + 35% * var(--tone))
   );
   --background-4: hsl(
   205,
